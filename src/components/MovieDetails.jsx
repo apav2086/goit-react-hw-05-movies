@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { Outlet} from "react-router-dom";
-import { Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+import Cast from './Cast';
+import Reviews from './Reviews';
 
-export default function MovieDetails() {
+export default function MovieDetails({ moviesData }) {
  
-  const [data, setData] = useState(() => moviesData.filter(movie =>
-    movie))
+  const [data] = useState(() => moviesData.filter(movie =>
+    movie));
  
   return (
     <div>
@@ -20,17 +23,15 @@ export default function MovieDetails() {
           <h5>Additional information</h5>
           <ul>
             <li>
-              <Link to={`/movies/${data.Id}/cast`} >Cast</Link>
+              <Route path="cast" element={<Cast />} />
             </li>
             <li>
-              <Link to={`/movies/${data.Id}/reviews`} >Reviews</Link>
+              <Route path="cast" element={<Reviews />} />
             </li>
           </ul>
           <Outlet />
         </div>
-       
-      )
-      }
+      )}
     </div>
   );
 }

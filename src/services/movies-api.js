@@ -12,7 +12,7 @@ export const getTrendingMovies = async () => {
   }
 };
 
-export const getSearchMovie = async (movie) => {
+export const getSearchMovie = async movie => {
   const url = `${URL}search/movie?api_key=${KEY}&query=${movie}`;
   try {
     const resp = await axios.get(url);
@@ -22,7 +22,7 @@ export const getSearchMovie = async (movie) => {
   }
 };
 
-export const getMovieById = async (movieId) => {
+export const getMovieById = async movieId => {
   const url = `${URL}movie/${movieId}?api_key=${KEY}`;
   try {
     const resp = await axios.get(url);
@@ -32,7 +32,7 @@ export const getMovieById = async (movieId) => {
   }
 };
 
-export const getCast = async (movieId) => {
+export const getCast = async movieId => {
   const url = `${URL}movie/${movieId}/credits?api_key=${KEY}`;
   try {
     const resp = await axios.get(url);
@@ -42,7 +42,7 @@ export const getCast = async (movieId) => {
   }
 };
 
-export const getReviews = async (movieId) => {
+export const getReviews = async movieId => {
   const url = `${URL}movie/${movieId}/reviews?api_key=${KEY}`;
   try {
     const resp = await axios.get(url);

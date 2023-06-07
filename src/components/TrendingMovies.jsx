@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import MoviesList from './MoviesList';
-import MoviesListItem from './MovieListItem';
-import { getTrendingMovies } from 'service/movies-api';
+import Movies from '../pages/Movies';
+import MoviesDetails from './MovieDetails';
+import { getTrendingMovies } from '../services/movies-api';;
 
 
 export default function TrendingMovies() {
@@ -9,10 +9,12 @@ export default function TrendingMovies() {
     useEffect(() => {
         getTrendingMovies()
             .then(data => {
-            setMovies((data.results))
-        })
-    }, [])
-    return <MoviesList>
-        <MoviesListItem data={movies} />
-    </MoviesList>
+                setMovies(data.results);
+            })
+    }, []);
+    return (
+        <Movies>
+            <MoviesDetails data={movies} />
+        </Movies>
+    );  
 }
