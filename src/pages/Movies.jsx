@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import MovieSearch from '../components/MovieSearch';
-import { Link } from 'react-router-dom';
 import { getSearchMovie } from '../services/movies-api';
+import { Link } from 'react-router-dom';
 export default function Movies() {
     const [search, setSearch] = useState([]);
-   useEffect(() => {
+    useEffect(() => {
         getSearchMovie()
             .then(data => {
                 setSearch(data);
@@ -13,7 +13,17 @@ export default function Movies() {
     return (
         <div>
             <MovieSearch setSearch={setSearch} search={search} />
-          
-    </div>
+            {search && (
+  <ul>
+                {search.map(({ id, title }) => (
+                <li key={id}>
+                        <Link to={`/movies/${id}`}>{title}</Link>
+                </li>
+                 
+            ))}
+             </ul>
+            )}
+        
+        </div>
     );
 }

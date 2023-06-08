@@ -1,14 +1,14 @@
-
+import { useState } from 'react';
 import { Outlet} from "react-router-dom";
 import { Link } from 'react-router-dom';
 import { Route, Routes } from 'react-router-dom';
 import Cast from './Cast';
 import Reviews from './Reviews';
 
-export default function MovieDetails({ data }) {
+export default function MovieDetails() {
  
-  //const [data] = useState(() => moviesData.filter(movie => movie));
- 
+  const [data] = useState(() => data.filter(movie => movie));
+
   return (
     <div>
       <Link to="/">Back</Link>

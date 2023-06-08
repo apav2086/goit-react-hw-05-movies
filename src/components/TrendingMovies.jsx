@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
-import Movies from '../pages/Movies';
 import { getTrendingMovies } from '../services/movies-api';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 export default function TrendingMovies() {
     const [movies, setMovies] = useState([]);
-    const nav = useNavigate();
+    
     useEffect(() => {
         getTrendingMovies()
             .then(data => {
@@ -15,16 +14,15 @@ export default function TrendingMovies() {
     }, []);
     return (
         <>
-             <Movies />
             <h4>Trending Today</h4>
-           
-            {movies.map((data, id) => (<ul>
+           <ul>
+                {movies.map(({ id, title }) => (
                 <li key={id}>
-<Link to={nav(data.homepage)}>{data.title}</Link>
+                        <Link to={`/movies/${id}`}>{title}</Link>
                 </li>
-            </ul>
                  
             ))}
+             </ul>
             </>
     );  
 }
