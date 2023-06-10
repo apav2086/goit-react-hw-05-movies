@@ -1,16 +1,16 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
-export default function MovieSearch(props) {
+export default function MovieSearch({setSearchParams}) {
   const [input, setInput] = useState('');
 
-  function handleInputChange(e) {
+  const handleInputChange = e => {
     setInput(e.target.value);
   }
 
-  function handleSubmit(e) {
+  const handleSubmit = e => {
     e.preventDefault();
-    props.setSearch(input);
-  }
+    setSearchParams({ query: input.toLowerCase() });
+  };
   return (
     <div>
       <form onSubmit={handleSubmit}>
