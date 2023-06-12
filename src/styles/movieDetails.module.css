@@ -1,0 +1,12 @@
+.general {
+    display: flex;
+        flex-direction: row;
+}
+
+.details {
+    margin-left: 30px;
+}
+
+.additional {
+    align-items: flex-start;
+}

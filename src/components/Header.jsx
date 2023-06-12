@@ -9,8 +9,8 @@ export default function Header() {
     >
     
       <ul style={{ display: 'flex',  justifyContent: 'space-between',
-        alignItems: 'flex-start', listStyle: 'none' }}>
-        <li>
+        listStyle: 'none',  }}>
+        <li style={{marginRight: '20px', }}>
           <NavLink className="nav" to="/" >Home</NavLink>
         </li>
         <li>
