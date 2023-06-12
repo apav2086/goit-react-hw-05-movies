@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigate, useParams, Outlet, Route, Routes } from 'react-router-dom';
+import { useNavigate, useParams, Outlet, Route, Routes, Link } from 'react-router-dom';
 import { getMovieById } from '../services/movies-api';
 import Cast from './Cast';
 import Reviews from './Reviews';
@@ -62,6 +62,10 @@ const navigate = useNavigate();
                   </section>
                 <section className={css.additional}>
                   <h4>Additional Details</h4>
+                  <ul className={css.list}>
+                    <li className={css.item}><Link to="cast">Cast</Link></li>
+                    <li className={css.item}> <Link to="reviews">Reviews</Link></li>
+                  </ul>
                 <Routes>
                 <Route path="/cast" element={<Cast />} />
                 <Route path="/reviews" element={<Reviews />} />

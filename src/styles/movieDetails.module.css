@@ -10,3 +10,9 @@
 .additional {
     align-items: flex-start;
 }
+.list{
+    list-style: none;
+}
+.item {
+text-decoration: none;
+}
