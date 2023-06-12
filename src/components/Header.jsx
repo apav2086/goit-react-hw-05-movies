@@ -1,20 +1,15 @@
 import { NavLink } from 'react-router-dom';
+import css from '../styles/header.module.css';
 export default function Header() {
   return (
-    <div
-      style={{
-        display: 'flex',
-       
-      }}
-    >
+    <div className={css.header}>
     
-      <ul style={{ display: 'flex',  justifyContent: 'space-between',
-        listStyle: 'none',  }}>
-        <li style={{marginRight: '20px', }}>
-          <NavLink className="nav" to="/" >Home</NavLink>
+      <ul className={css.list}>
+        <li className={css.item}>
+          <NavLink className={css.nav} to="/" >Home</NavLink>
         </li>
         <li>
-          <NavLink className="nav" to="/Movies" >Movies</NavLink>
+          <NavLink className={css.nav} to="/Movies" >Movies</NavLink>
         </li>
         
       </ul>

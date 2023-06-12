@@ -1,0 +1,20 @@
+.header {
+    display: flex;
+}
+.list {
+    display: flex;
+     justify-content: space-between;
+    list-style: none;
+}
+.item {
+    margin-right: 20px;
+}
+.nav {
+    color: black;
+    text-decoration: none;
+}
+.nav.active {
+    color: red;
+    text-decoration: none;
+    
+}
